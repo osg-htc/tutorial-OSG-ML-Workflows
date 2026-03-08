@@ -1,0 +1,18 @@
+container_image = <path_to_container_image.sif>
+
+request_disk = <int>
+request_memory = <int> GB
+request_cpus = <int>
+request_gpus = <int>
+
+executable = <path_to_executable_script>
+transfer_executable = false
+
+transfer_input_files = <path_to_input_files>
+transfer_output_files = <path_to_output_files>
+
+output = $(CLUSTERID).out
+error = $(CLUSTERID).err
+log = catdog_training.log
+
+queue

@@ -2,8 +2,10 @@
 
 wd=$(pwd)
 mkdir data
-unzip test.zip -d data/
-rm test.zip
+unzip images.zip -d data/
+rm images.zip
+
+cd /app/
 
 python infer.py \
   --data-dir $wd/data/ \ 

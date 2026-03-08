@@ -1,24 +1,18 @@
-universe = container
-docker_image = docker://iaross/catdog:with_inference
-# container_image = file:///staging/iaross/catdog_with_inference.sif # see our guide on converting
+#docker_image = docker://iaross/catdog:with_inference
+container_image = osdf:///osg-public/containers/tutorial-OSG-ML-Workflows/catdog_inference.sif
 
-request_disk = $(disk:500MB)
+
+request_disk = $(disk:10GB)
 request_memory = $(memory:6GB)
 request_cpus = $(cpus:1)
 request_gpus = 1
 gpus_minimum_capability = 7.5
 gpus_minimum_memory = 4096
-+WantGPULab = true
-+GPUJobLength = "short"
 
-executable = /bin/bash
-transfer_executable = false
-arguments = infer.sh
+executable = infer.sh
 
-transfer_input_files = infer.sh,model.pth,file:///staging/iaross/cat_dog/images.zip
+transfer_input_files = osdf:///osg-public/data/tutorial-OSG-ML-Workflows/test.zip, model.pth, infer.py
 transfer_output_files = output
-should_transfer_files = YES
-when_to_transfer_output = ON_EXIT_OR_EVICT
 
 output = $(CLUSTERID).out
 error = $(CLUSTERID).err

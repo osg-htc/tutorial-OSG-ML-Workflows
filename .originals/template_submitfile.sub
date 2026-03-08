@@ -1,0 +1,20 @@
+container_image = <path_to_container_image.sif>
+# container_image = file:///ospool/ap40/data/ian.ross/catdog.sif # see our guide on converting
+
+request_disk = $(disk:500MB)
+request_memory = $(memory:6GB)
+request_cpus = $(cpus:1)
+request_gpus = 1
+# See our guide on GPU usage
+
+executable = <path_to_executable_script>
+transfer_executable = false
+
+transfer_input_files = <path_to_input_files>
+transfer_output_files = <path_to_output_files>
+
+output = $(CLUSTERID).out
+error = $(CLUSTERID).err
+log = catdog_training.log
+
+queue
