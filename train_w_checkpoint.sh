@@ -7,7 +7,7 @@ mkdir $wd/output
 unzip train.zip -d data/
 rm train.zip
 
-python train.py \
+python train_with_checkpoint.py \
   --data-dir $wd/data/ \ 
   --checkpoint-dir $wd/output/ \
   --checkpoint-every 5

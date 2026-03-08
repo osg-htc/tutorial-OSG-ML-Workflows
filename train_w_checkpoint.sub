@@ -14,7 +14,7 @@ gpus_minimum_memory = 4096
 
 executable = train_w_checkpoint.sh
 
-transfer_input_files = osdf:///osg-public/data/tutorial-OSG-ML-Workflows/train.zip, train.py
+transfer_input_files = osdf:///osg-public/data/tutorial-OSG-ML-Workflows/train.zip, train_with_checkpoint.py
 transfer_output_files = output
 
 output = $(CLUSTERID).out
