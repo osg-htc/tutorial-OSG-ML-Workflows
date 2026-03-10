@@ -8,7 +8,7 @@ unzip train.zip -d data/
 rm train.zip
 
 python train_with_checkpoint.py \
-  --data-dir $wd/data/ \ 
+  --data-dir $wd/data/ \
   --checkpoint-dir $wd/output/ \
   --checkpoint-every 5
   --epochs 20
