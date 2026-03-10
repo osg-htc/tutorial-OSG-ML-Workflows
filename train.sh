@@ -8,5 +8,4 @@ unzip train.zip -d data/
 rm train.zip
 
 python train.py \
-  --data-dir $wd/data/ \ 
-  --checkpoint-dir $wd/output/
+  --data-dir $wd/data/ 
